@@ -17,8 +17,8 @@ module global_variables
   real(8) :: kr_max,kz_max,dkr,dkz
   real(8),allocatable :: kr(:),kz0(:),kz(:)
 ! d: (semi) core , v: valence, c: conduction
-  real(8),parameter :: eps_d = -40d0/(2d0*Ry)
-  real(8),parameter :: eps_c1 = 1.52d0/(2d0*Ry) ,eps_c2 = 1.52d0/(2d0*Ry) 
+  real(8),parameter :: eps_d = -40.73d0/(2d0*Ry)
+  real(8),parameter :: eps_c1 = 1.52d0/(2d0*Ry) ,eps_c2 = (1.52d0+2.4d0)/(2d0*Ry) 
   real(8),parameter :: mass_c1 = 0.067d0, mass_c2 = 0.067d0
   real(8),parameter :: piz_dc1 = 1d0,piz_dc2 = 1d0
   real(8),parameter :: piz_dcc = 0d0
