@@ -32,7 +32,7 @@ subroutine preparation
   end if
 !  write(*,"(9I9)")myrank,NKrz_s,NKrz_e
 
-  allocate(zCt(3,2,NKrz_s:NKrz_e),eps(3,NKrz_s:NKrz_e))
+  allocate(zCt(3,1,NKrz_s:NKrz_e),eps(3,NKrz_s:NKrz_e))
   allocate(kz0(-NKz:NKz),kz(-NKz:NKz),kr(NKr))
   allocate(ikr_table(NKrz),ikz_table(NKrz))
   zCt = 0d0; zCt(1,1,:) = 1d0; zCt(2,2,:) = 1d0
@@ -66,8 +66,8 @@ subroutine preparation
     ikz = ikz_table(ik)
     kz(ikz) = kz0(ikz)
     eps(1,ik) = eps_d
-    eps(2,ik) = -0.5d0/mass_v*(kr(ikr)**2+kz(ikz)**2)
-    eps(3,ik) = eps_g +0.5d0/mass_c*(kr(ikr)**2+kz(ikz)**2)
+    eps(2,ik) = eps_c1 +0.5d0/mass_c1*(kr(ikr)**2+kz(ikz)**2)
+    eps(3,ik) = eps_c2 +0.5d0/mass_c2*(kr(ikr)**2+kz(ikz)**2)
   end do
 
 end subroutine preparation
