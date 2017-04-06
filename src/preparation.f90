@@ -35,7 +35,7 @@ subroutine preparation
   allocate(zCt(3,1,NKrz_s:NKrz_e),eps(3,NKrz_s:NKrz_e))
   allocate(kz0(-NKz:NKz),kz(-NKz:NKz),kr(NKr))
   allocate(ikr_table(NKrz),ikz_table(NKrz))
-  zCt = 0d0; zCt(1,1,:) = 1d0; zCt(2,2,:) = 1d0
+  zCt = 0d0; zCt(1,1,:) = 1d0
   eps = 0d0
 
 ! table

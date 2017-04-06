@@ -25,9 +25,9 @@ subroutine dt_evolve(it) ! Now coding
 
 !== First half dt
     kz(ikz) = kz0(ikz) + Act_old
-    eps(1,ik) = eps_d
-    eps(2,ik) = eps_c1 +0.5d0/mass_c1*(kr(ikr)**2+kz(ikz)**2)
-    eps(3,ik) = eps_c2 +0.5d0/mass_c2*(kr(ikr)**2+kz(ikz)**2)
+    eps_t(1) = eps_d
+    eps_t(2) = eps_c1 +0.5d0/mass_c1*(kr(ikr)**2+kz(ikz)**2)
+    eps_t(3) = eps_c2 +0.5d0/mass_c2*(kr(ikr)**2+kz(ikz)**2)
 
     zHmat(1,1) = eps_t(1); zHmat(2,2) = eps_t(2); zHmat(3,3) = eps_t(3)
     zHmat(1,2) = -zI*piz_dc1*Et_old/(eps_t(1)-eps_t(2)); zHmat(2,1)=conjg(zHmat(1,2))
@@ -45,9 +45,9 @@ subroutine dt_evolve(it) ! Now coding
 
 !== Second half dt
     kz(ikz) = kz0(ikz) + Act_new
-    eps(1,ik) = eps_d
-    eps(2,ik) = eps_c1 +0.5d0/mass_c1*(kr(ikr)**2+kz(ikz)**2)
-    eps(3,ik) = eps_c2 +0.5d0/mass_c2*(kr(ikr)**2+kz(ikz)**2)
+    eps_t(1) = eps_d
+    eps_t(2) = eps_c1 +0.5d0/mass_c1*(kr(ikr)**2+kz(ikz)**2)
+    eps_t(3) = eps_c2 +0.5d0/mass_c2*(kr(ikr)**2+kz(ikz)**2)
 
     zHmat(1,1) = eps_t(1); zHmat(2,2) = eps_t(2); zHmat(3,3) = eps_t(3)
     zHmat(1,2) = -zI*piz_dc1*Et_old/(eps_t(1)-eps_t(2)); zHmat(2,1)=conjg(zHmat(1,2))
