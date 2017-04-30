@@ -10,6 +10,7 @@ subroutine time_propagation
   integer :: it,it2
   real(8) :: jav_t
   real(8) :: ss,ss_l
+  real(8) :: nex_c1,nex_c2
 
   call current(0,jav_t)
   jtz(0) = jav_t
@@ -35,5 +36,9 @@ subroutine time_propagation
 
   end do
 
+  call calc_nex(nex_c1,nex_c2)
+
+  write(*,"(A)")"# of excited electrons, nex_c1, nex_c2"
+  write(*,"(999e26.16e3)")nex_c1+nex_c2,nex_c1,nex_c2
 
 end subroutine time_propagation
