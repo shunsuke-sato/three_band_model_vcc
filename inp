@@ -1,6 +1,6 @@
-2d0 2d0   ! kr_max,kz_max
+1d0 1d0   ! kr_max,kz_max
 256  256    ! NKr, NKz
-16537 0.1d0   ! NT, dt
+16600 0.1d0   ! NT, dt
 "cos2cos"
 1d12 1.55d0  20d0 ! E0_1,omega_ev_1,tpulse_fs_1
 "cos4cos"
