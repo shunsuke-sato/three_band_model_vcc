@@ -16,6 +16,7 @@ module global_variables
   integer,allocatable :: ikr_table(:),ikz_table(:)
   real(8) :: kr_max,kz_max,dkr,dkz
   real(8),allocatable :: kr(:),kz0(:),kz(:)
+  real(8),parameter :: fact_intra = 1d0, fact_inter = 1d0
 ! d: (semi) core , v: valence, c: conduction
   real(8),parameter :: eps_d = -30.d0/(2d0*Ry)
   real(8),parameter :: eps_c1 = 0d0/(2d0*Ry) ,eps_c2 = eps_c1 + 0.2d0/(2d0*Ry) 

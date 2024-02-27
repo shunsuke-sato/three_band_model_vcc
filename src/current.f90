@@ -13,7 +13,7 @@ subroutine current(it,jav)
   real(8) :: mass_c1_i,mass_c2_i
   integer :: ik,ikr,ikz
 
-  kz(:) = kz0(:) + Act(it)
+  kz(:) = kz0(:) + Act(it)*fact_intra
   mass_c1_i = 1d0/mass_c1
   mass_c2_i = 1d0/mass_c2
   jav_l = 0d0

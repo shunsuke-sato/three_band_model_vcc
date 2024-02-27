@@ -18,6 +18,12 @@ subroutine dt_evolve(it) ! Now coding
   Et_old = -0.5d0*(Act(it+1)-Act(it-1))/dt
   Et_new = -0.5d0*(Act(it+1+1)-Act(it+1-1))/dt
 
+! modulation of intraband and interband transition
+  Act_old = Act_old*fact_intra
+  Act_new = Act_new*fact_intra
+  Et_old = Et_old*fact_inter
+  Et_new = Et_new*fact_inter
+
   do ik = NKrz_s,NKrz_e
     ikr = ikr_table(ik); ikz = ikz_table(ik)
 
