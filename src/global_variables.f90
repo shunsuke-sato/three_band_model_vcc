@@ -18,12 +18,12 @@ module global_variables
   real(8),allocatable :: kr(:),kz0(:),kz(:)
   real(8),parameter :: fact_intra = 1d0, fact_inter = 1d0
 ! d: (semi) core , v: valence, c: conduction
-  real(8),parameter :: eps_d = -30.d0/(2d0*Ry)
-  real(8),parameter :: eps_c1 = 0.1440380881432859d+001-0.2586486109145068d+000 + 0.13d0/27.2114d0
+  real(8),parameter :: eps_d = -(0.1440380881432848d+001 - 0.2586486109145065d+00)
+  real(8),parameter :: eps_c1 = 0d0
   real(8),parameter :: eps_c2 = eps_c1 + 0.2d0/(2d0*Ry) 
-  real(8),parameter :: mass_c1 = -0.5d0, mass_c2 = mass_c1
+  real(8),parameter :: mass_c1 = 2.5d0, mass_c2 = mass_c1
   real(8),parameter :: piz_dc1 = 1d0,piz_dc2 = 0d0
-  real(8),parameter :: piz_dcc = 1d0
+  real(8),parameter :: piz_dcc = 0d0
   real(8),parameter :: deps12_2 = (0.5d0/(2d0*Ry) )**2
 
 ! Time-propagation
