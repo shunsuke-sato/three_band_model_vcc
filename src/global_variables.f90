@@ -22,7 +22,7 @@ module global_variables
   real(8),parameter :: eps_c1 = 1.52d0/(2d0*Ry)
   real(8),parameter :: eps_c2 = eps_c1 + 0.2d0/(2d0*Ry) 
   real(8),parameter :: mass_c1 = 0.067d0, mass_c2 = mass_c1
-  real(8),parameter :: piz_dc1 = 1d0,piz_dc2 = 0d0
+  real(8),parameter :: piz_dc1 = 0.01d0,piz_dc2 = 0d0
   real(8),parameter :: piz_dcc = 0d0
   real(8),parameter :: deps12_2 = (0.5d0/(2d0*Ry) )**2
 
