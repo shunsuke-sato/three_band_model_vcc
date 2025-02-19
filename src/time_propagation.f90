@@ -24,16 +24,15 @@ subroutine time_propagation
     call current(it+1,jav_t)
     jtz(it+1) = jav_t
 
-    if(mod(it,Nt/100) == 0 .and. myrank == 0)then
-      open(nf_current,file=cf_current)
-      write(nf_current,"(A)")"# tt(au), Act(au), current(au)"
-      do it2=0,Nt
-        write(nf_current,"(999e26.16e3)")dt*it2,Act(it2),jtz(it2)
-      end do
-      close(nf_current)
-    end if
-
   end do
 
+  if(myrank == 0)then
+    open(nf_current,file=cf_current)
+    write(nf_current,"(A)")"# tt(au), Act(au), current(au)"
+    do it2=0,Nt
+      write(nf_current,"(999e26.16e3)")dt*it2,Act(it2),jtz(it2)
+    end do
+    close(nf_current)
+  end if
 
 end subroutine time_propagation
