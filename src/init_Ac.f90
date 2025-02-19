@@ -12,10 +12,10 @@ subroutine init_Ac
 
   allocate(Act(-1:Nt+1),jtz(0:Nt+1),jtz_intra(0:Nt+1),jtz_inter(0:Nt+1))
 
-  E0_1=5.338d-9*sqrt(Iwcm2_1)
+  E0_1=E0_1_Vpm/(27.2114d0/0.529177210544d-10)
   omega_1 = omega_ev_1/(2d0*Ry)
   tpulse_1 = tpulse_fs_1/0.02418d0
-  E0_2=5.338d-9*sqrt(Iwcm2_2)
+  E0_2=E0_2_Vpm/(27.2114d0/0.529177210544d-10)
   omega_2 = omega_ev_2/(2d0*Ry)
   tpulse_2 = tpulse_fs_2/0.02418d0
   Tdelay = Tdelay_fs/0.02418d0

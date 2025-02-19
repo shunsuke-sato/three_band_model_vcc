@@ -13,9 +13,9 @@ subroutine input
     read(*,*)NKr, NKz
     read(*,*)Nt,dt
     read(*,*)envelope_1
-    read(*,*)Iwcm2_1,omega_ev_1,tpulse_fs_1
+    read(*,*)E0_1_Vpm,omega_ev_1,tpulse_fs_1
     read(*,*)envelope_2
-    read(*,*)Iwcm2_2,omega_ev_2,tpulse_fs_2
+    read(*,*)E0_2_Vpm,omega_ev_2,tpulse_fs_2
     read(*,*)Tdelay_fs
   end if
 
@@ -26,11 +26,11 @@ subroutine input
   call MPI_BCAST(Nt,1,MPI_INTEGER,0,MPI_COMM_WORLD,ierr)  
   call MPI_BCAST(dt,1,MPI_REAL8,0,MPI_COMM_WORLD,ierr)
   call MPI_BCAST(envelope_1,20,MPI_CHARACTER,0,MPI_COMM_WORLD,ierr)
-  call MPI_BCAST(Iwcm2_1,1,MPI_REAL8,0,MPI_COMM_WORLD,ierr)
+  call MPI_BCAST(E0_1_Vpm,1,MPI_REAL8,0,MPI_COMM_WORLD,ierr)
   call MPI_BCAST(omega_ev_1,1,MPI_REAL8,0,MPI_COMM_WORLD,ierr)
   call MPI_BCAST(tpulse_fs_1,1,MPI_REAL8,0,MPI_COMM_WORLD,ierr)
   call MPI_BCAST(envelope_2,20,MPI_CHARACTER,0,MPI_COMM_WORLD,ierr)
-  call MPI_BCAST(Iwcm2_2,1,MPI_REAL8,0,MPI_COMM_WORLD,ierr)
+  call MPI_BCAST(E0_2_Vpm,1,MPI_REAL8,0,MPI_COMM_WORLD,ierr)
   call MPI_BCAST(omega_ev_2,1,MPI_REAL8,0,MPI_COMM_WORLD,ierr)
   call MPI_BCAST(tpulse_fs_2,1,MPI_REAL8,0,MPI_COMM_WORLD,ierr)
   call MPI_BCAST(Tdelay_fs,1,MPI_REAL8,0,MPI_COMM_WORLD,ierr)
