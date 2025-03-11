@@ -8,7 +8,7 @@ subroutine init_Ac
   use global_variables
   implicit none
   integer :: it
-  real(8) :: tt
+  real(8) :: tt,xx
 
   allocate(Act(-1:Nt+1),jtz(0:Nt+1),jtz_intra(0:Nt+1),jtz_inter(0:Nt+1))
 
@@ -40,6 +40,16 @@ subroutine init_Ac
           *sin(omega_1*(tt-0.5d0*tpulse_1))
       end if
     end do
+  case("qdc")
+    do it = 0,Nt+1
+      tt = dt*dble(it)
+      xx = tt/tpulse_1
+      if(xx <= 1d0)then
+        Act(it) = -E0_1*tpulse_1*(xx**3 -0.5d0*xx**4)
+      else
+        Act(it) = -E0_1*(tt-tpulse_1) -E0_1*tpulse_1*0.5d0
+      end if
+    end do    
   case default
     stop "Invalid envelope_1"
   end select
